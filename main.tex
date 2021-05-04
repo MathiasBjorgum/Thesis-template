@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt,norsk]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+\usepackage{setup}
+\usepackage{setspace}
+
+\usepackage[]{kantlipsum} % Pakke for å lage dummy-tekst
+
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+
+\import{./}{title}
+
+\thispagestyle{empty}
+\pagestyle{plain}
+\import{./Deler/}{forord}
+
+\import{./Deler/}{sammendrag}
+
+\newpage
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+\mainmatter
+\pagestyle{fancy}
+\chapter{Innledning}
+\import{./Deler/}{innledning}
+
+\chapter{Teori}
+\import{./Deler/}{teori}
+
+% \newpage
+\printbibliography[heading = bibintoc, title = Litteraturliste]
+
+\end{document}
