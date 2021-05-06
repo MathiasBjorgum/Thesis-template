@@ -9,9 +9,9 @@
 \usepackage{dirtytalk}
 \usepackage{changepage}
 \usepackage{pdfpages}
-\usepackage{tocloft}
 \usepackage{array}
 \usepackage{dirtytalk}
+\usepackage{verbatim} 
 
 
 % ------- Innhold -------
@@ -20,11 +20,12 @@
 % Bibliografi og referanser
 % Sideoppsett
 % Plotting
+% Other
 % -----------------------
 
 % ----- Generelt -----
 \usepackage{times} % Setter fonten til times new roman
-\usepackage[british, main =norsk]{babel} % Setter norsk språk
+\usepackage[norsk, main =norsk]{babel} % Setter norsk språk
 \usepackage{import} % Gjør det mulig å importere deler
 \usepackage{hyperref} % Gjør det mulig å ha hyperlenker
 \hypersetup{    % Setter farger på linkene
@@ -67,9 +68,9 @@
 \newcommand{\addappendix}{   % Egendefinert funksjon for å sette inn vedlegg med gitte innstillinger
     \newpage
     \appendix
-    \section*{Vedlegg} % Navn på vedlegg
-    \addcontentsline{toc}{section}{Vedlegg} % Legger vedlegget til innholdsfortegnelsen
-    \renewcommand{\thesubsection}{\Alph{subsection}} % Endrer numrering til store bokstaver
+    \chapter*{Vedlegg} % Navn på vedlegg
+    \addcontentsline{toc}{chapter}{Vedlegg} % Legger vedlegget til innholdsfortegnelsen
+    \renewcommand{\thesection}{\Alph{section}} % Endrer numrering til store bokstaver
 }
 
 % ----- Bibliografi og referanser -----
@@ -138,4 +139,15 @@
 \pgfplotsset{compat = 1.8}
 % \pgfplotsset{width=14cm, height=7cm,compat=1.8} % Ta bort '%' for å ha en standardstørrelse for alle plots
 \usepackage{mathrsfs}
-\usetikzlibrary{arrows}
+
+
+\usetikzlibrary{shapes,arrows,trees}
+\tikzstyle{process} = [rectangle,
+    minimum height=1.8cm,
+    text width = 2.8cm,
+    text centered,
+    draw=black, 
+    fill=orange!30
+    ]
+\tikzstyle{line} = [draw, -latex']
+

@@ -1,0 +1,60 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture} [node distance = 4cm, auto]
+
+\node [process] (init) {Totalkapital-rentabilitet};
+\node[process, right of=init, yshift=-3cm] (RG) {Resultatgrad};
+\node[process, right of=init, yshift=3cm] (KO) {Kapitalens-omløpshastighet};
+\node[process, right of = KO, yshift = 1.5cm] (DI) {Driftsinntekter};
+\node[process, right of = KO, yshift = -1.5cm] (TKS) {Totalkapital (snitt)};
+\node[process, right of = DI] (AM) {Anleggsmidler (snitt)};
+\node[process, right of = TKS] (OM) {Omløpsmidler (snitt)};
+\node[process, right of = RG, yshift = 1.5cm] (DRF) {Driftsresultat + Finansinntekter};
+\node[process, right of = DRF] (DIF) {Driftsinntekter + Finansinntekter};
+\node[process, right of = RG, yshift = -1.5cm] (DI1) {Driftsinntekter};
+\node[process, right of = DI1] (DK) {Driftskostnader};
+
+\node [right of = init] (X) {$\times$};
+\node [right of = KO] (1) {$\div$};
+\node [right of = RG] (2) {$\div$};
+\node [right of = 1] (3) {$+$};
+\node [right of = 2] (4) {$-$};
+
+\draw (init) -- (2,0);
+\draw [line] (2,0) |- (KO);
+\draw [line] (2,0) |- (RG);
+
+\draw (RG) -- ++(2,0);
+\draw [line] (RG)+(2,0) |- (DRF);
+\draw [line] (RG)+(2,0) |- (DI1);
+
+\draw (KO) -- +(2,0);
+\draw [line] (KO)+(2,0) |- (DI);
+\draw [line] (KO)+(2,0) |- (TKS);
+
+\draw (TKS) -- +(2,0);
+\draw [line] (TKS)+(2,0) |- (AM);
+\draw [line] (TKS)+(2,0) |- (OM);
+
+\draw (DRF) -- +(2,0);
+\draw [line] (DRF)+(2,0) -- (DIF);
+\draw [line] (DRF)+(2,0) |- (DK);
+
+\draw [dashed] (X) -- (RG);
+\draw [dashed] (X) -- (KO);
+\draw [dashed] (1) -- (DI);
+\draw [dashed] (1) -- (TKS);
+\draw [dashed] (2) -- (DRF);
+\draw [dashed] (2) -- (DI1);
+\draw [dashed] (3) -- (AM);
+\draw [dashed] (3) -- (OM);
+\draw [dashed] (4) -- (DIF);
+\draw [dashed] (4) -- (DK);
+
+\end{tikzpicture}
+
+\caption[DuPont-modellen]{En grafisk fremstilling av DuPont-modellen (\cite{kristoffersen}).}
+
+\label{fig:DuPont}
+
+\end{figure}

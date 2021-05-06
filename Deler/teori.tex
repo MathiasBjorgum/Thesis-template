@@ -1,5 +1,88 @@
 
-\kant[1]
+Teorikapittelet skal gjennomgå teorien brukt videre i oppgaven. Jeg bruker teorikapittelet her for å illustrere ulike funksjoner bygd inn i denne templaten. Dette er bygging av figurer, bruk av bilder og generell layout.
 
-\section{Første teoridelkapittel}
-\kant[48]
+\section{Problemstillingen}
+Her redegjør jeg for problemstillingen. Jeg ønsker derfor å referere til et tidligere kapittel. Dette gjøres ved å bruke \verb!\label{sec:innledning:problemstilling}! i problemstillingen for å så referere til det her med \verb!\autoref{}!. Resultatet blir da som dette: \autoref{sec:innledning:problemstilling}. Dette er da en hyperlenke som kan trykkes på.
+
+\section{Regnskapsanalyse}
+Oppgaven jeg skrev var en lønnsomhetsanalyse og det er da er en viktig del av det en regnskapsanalyse. Jeg fremhever dette delkapittelet for å illustrere bruken av underkapitler i \LaTeX. Alt som står fra og med \autoref{sec:teori:soliditet} er kun for å illustrere hvordan et kapittel kan struktureres.
+
+\subsection{Soliditet}
+\label{sec:teori:soliditet}
+Soliditet sier noe om en bedrifts evne til å tåle tap (\cite{kristoffersen}). Det er knyttet til størrelsen på egenkapitalen i bedriften. Vi har valgt å trekke frem gjeldsgrad og egenkapitalandel som nøkkeltall her.
+
+\paragraph{Gjeldgrad}
+Gjeldsgraden viser forholdet mellom kapitalen som er investert ved lån eller annen gjeld og kapitalen som er investert av eierne. Den uttrykkes her i antall ganger. Dersom gjeldsgraden er 1 vil det bety at gjeld og egenkapital er like store, dersom gjeldsgraden er 2 vil det bety at gjelden er dobbelt så stor som egenkapitalen. Formelen er:
+
+\begin{equation}
+    \label{eq:gjeldsgrad}
+    \boxed{\text{Gjeldsgrad}=\frac{\text{Gjeld}}{\text{Egenkapital}}}
+\end{equation}
+
+\paragraph{Egenkapitalandel}
+Vi har også valgt å trekke frem egenkapitalandelen. Dette forteller hvor stor del av totalkapitalen som er egenkapital. Egenkapitalandelen avtar med økende gjeldsgrad, og egenkapitalandelen bør være så høy som mulig for å sikre en sterk soliditet. Formelen er:
+
+\begin{equation}
+    \label{eq:egenkapitalandel}
+    \boxed{\text{Egenkapitalandel}=\frac{\text{Egenkapital}}{\text{Totalkapital}}}
+\end{equation}
+
+\subsection{Lønnsomhet}
+
+\label{sec:teori:lønnsomhet}
+Lønnsomhet sier noe om bedriftens evne til å skape overskudd (\cite{kristoffersen}). Enkelt forklart kan vi si at inntektene må være større enn kostnadene for at en bedrift skal være lønnsom. Vi har valgt å se på følgende nøkkeltall for lønnsomhet: totalkapitalrentabilitet, kapitalens omløpshastighet, resultatgrad, egenkapitalrentabilitet og EBITDA-margin.
+
+\paragraph{Totalkapitalrentabilitet}
+Det første nøkkeltallet vi trekker frem knyttet til lønnsomhet er totalkapitalrentabiliteten. Totalkapitalrentabiliteten måler en bedrifts avkastning på den samlede kapitalen som er bundet i bedriften (\cite{kristoffersen}). En totalkapitalrentabilitet på over 10\% er ansett som god og en totalkapitalrentabilitet over 15\% er ansett som meget godt. 
+Det er forskjellige måter å beregne totalkapitalrentabiliteten på. Vi velger å basere oss på gjennomsnittlig totalkapital, da dette tar hensyn til investeringer i løpet av året. Denne vurderingen vil bli videre belyst i metodekapittelet.
+Formelen er:
+
+\begin{equation}
+    \label{eq:ROI}
+    \boxed{\text{Totalkapitalrentabilitet}=\frac{\text{Driftresultat}+\text{Finansinntekter}}{\text{Gjennomsnittlig totalkapital}}}
+\end{equation}
+Vi kan ved hjelp av DuPont-modellen dekomponere totalkapitalrentabiliteten. Modellen er vist i \autoref{fig:DuPont}.
+\import{./Figurer/}{DuPont}
+
+
+Totalkapitalrentabiliteten kan i henhold til DuPont-modellen defineres slik:
+\begin{equation}
+    \label{eq:ROI2}
+    \boxed{\text{Totalkapitalrentabilitet}=\text{Resultatgrad} * \text{Kapitalens omløpshastighet}}
+\end{equation}
+
+\paragraph{Kapitalens omløpshastighet}
+Kapitalens omløpshastighet forteller hvor effektivt en bedrift utnytter kapitalen som er bundet i bedriften (\cite{kristoffersen}). En høy verdi vil innebære at bedriften utnytter sine ressurser effektivt. For å forbedre kapitalens omløpshastighet kan en bedrift øke inntektene eller redusere den gjennomsnittlige totalkapitalen. Formelen er:
+\begin{equation}
+    \label{eq:KO}
+    \boxed{\text{Kapitalens omløpshastighet}=\frac{\text{Driftsinntekter}}{\text{Gjennomsnittlig totalkapital}}}
+\end{equation}
+
+\paragraph{Resultatgrad}
+Resultatgraden uttrykker forholdet mellom nettoresultatet og driftsinntektene i perioden. Den viser hvor mye som er tjent på hver omsatte krone (\cite{kristoffersen}). I denne oppgaven oppgis nøkkeltallet i prosent. Formelen er:
+\begin{equation}
+    \label{eq:RG}
+    \boxed{\text{Resultatgrad}=\frac{\text{Driftresultat}+\text{Finansinntekter}}{\text{Driftsinntekter}}}
+\end{equation}
+
+\paragraph{Egenkapitalrentabilitet}
+Et annet mål på avkastning i bedriften er egenkapitalrentabiliteten. Dette viser avkastningen på eiernes investering i bedriften (\cite{kristoffersen}). Egenkapitalrentabiliteten viser hvor stor andel av resultatet som tilfaller egenkapitalen. Vi utfører beregningene på bakgrunn av gjennomsnittlig egenkapital. Dette er av samme grunn som for gjennomsnittlig totalkapital.
+I denne oppgaven benytter vi egenkapitalrentabilitet etter skatt og oppgir tallet i prosent.
+Formelen er:
+
+\begin{equation}
+    \label{eq:EKR}
+    \boxed{\text{Egenkapitalrentabilitet (etter skatt)}=\frac{\text{Ordinært resultat}}{\text{Gjennomsnittlig egenkapital}}}
+\end{equation}
+
+\paragraph{EBITDA-margin}
+Det siste nøkkeltallet vi trekker frem er EBITDA-margin. EBITDA står for Earnings Before Interests, Taxes, Depreciations and Amortizations. På norsk blir dette inntekter før renter, skatt, avskrivninger og nedskrivninger. Dette er et nøkkeltall basert på kontantstrømmen til en bedrift og viser hvor stor kontantstrøm som er skapt i forhold til hver krone i salg (\cite{kristoffersen}). Formelen er:
+\hspace{-2em}
+\begin{equation}
+    \label{eq:EBITDA-margin}
+    \boxed{\text{EBITDA-margin}=\frac{\text{EBITDA}}{\text{Driftsinntekter}}}
+\end{equation}
+
+\section{Strategisk analyse}
+En regnskapsanalyse gjør beregninger basert på historiske tall. For å få et helhetlig bilde av lønnsomheten skal vi derfor også foreta en strategisk analyse. Formålet med den strategiske analysen er å undersøke hva som driver lønnsomheten til Kahoot!. Vi skal se på hvilke fordeler og ulemper bedriften har i markedet, i tillegg til konkurransesituasjonen bedriften befinner seg i. Dette gjøres ved henholdsvis SWOT-analyse og Porters Five Forces. Ved å benytte disse analysene kan vi få viktig innsikt i lønnsomhetsutviklingen fremover i tid. 
+

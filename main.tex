@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,norsk]{memoir}
+\documentclass[a4paper,12pt,norsk, openright]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage{silence}
 \WarningFilter{latex}{You have requested package}
@@ -21,10 +21,13 @@
 
 \import{./Deler/}{sammendrag}
 
-\newpage
-\tableofcontents
+\cleardoublepage
+\tableofcontents*
 
+\cleardoublepage
 \listoffigures
+
+% \cleardoublepage
 \listoftables
 
 \mainmatter
@@ -35,7 +38,12 @@
 \chapter{Teori}
 \import{./Deler/}{teori}
 
-% \newpage
+\chapter{Analyse}
+\import{./Deler/}{analyse}
+
 \printbibliography[heading = bibintoc, title = Litteraturliste]
+
+\addappendix
+\import{./Vedlegg/}{regnskap}
 
 \end{document}
